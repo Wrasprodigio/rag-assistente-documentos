@@ -87,9 +87,17 @@ class RetrieverHibrido:
         self._vetorial = faiss.as_retriever(search_kwargs={"k": top_k * 2})
 
         # 2) Busca por palavra-chave (BM25) sobre os textos em memória.
+        #    Preprocessador: coloca tudo em minúsculo e separa em palavras.
+        #    Isso torna a busca insensível a maiúsculas — "rag", "Rag" e "RAG"
+        #    passam a casar igualmente (corrige bug de case sensitivity).
+        import re
+
+        def _preprocess(texto: str):
+            return re.findall(r"\w+", texto.lower())
+
         chunks = fatiar_todos()
         docs_lc = [LCDocument(page_content=c.texto, metadata=c.metadados) for c in chunks]
-        self._bm25 = BM25Retriever.from_documents(docs_lc)
+        self._bm25 = BM25Retriever.from_documents(docs_lc, preprocess_func=_preprocess)
         self._bm25.k = top_k * 2
 
     def invoke(self, pergunta: str):
@@ -112,8 +120,8 @@ if __name__ == "__main__":
     print("Pronto.\n")
 
     perguntas_exemplo = [
-        "o que é rede neural?",
-        "como funciona um llm?",
+        "o que é aprendizado por reforço?",
+        "como funciona um transformer?",
     ]
     for pergunta in perguntas_exemplo:
         print("=" * 64)
