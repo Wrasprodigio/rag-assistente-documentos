@@ -3,8 +3,8 @@
 # Instale com:  pip install -r requirements.txt
 
 # Núcleo do RAG
-langchain==0.3.7              # orquestra o pipeline (loaders, chunking, chains)
-langchain-community==0.3.7    # integrações da comunidade (FAISS, loaders)
+langchain==0.3.7              # framework principal (retrievers, chunking, chains)
+langchain-community==0.3.7    # integrações da comunidade (FAISS, BM25, loaders)
 langchain-openai==0.2.8       # conector para Azure OpenAI / OpenAI
 
 # Banco vetorial local (Fase 2) — grátis, roda na sua máquina
@@ -17,6 +17,7 @@ wikipedia==1.4.0             # baixa artigos da Wikipedia (nossa base pública)
 
 # Embeddings locais (alternativa grátis ao Azure na fase de dev)
 sentence-transformers==3.3.1 # gera embeddings sem custo de API
+langchain-huggingface==0.1.2  # ponte LangChain <-> sentence-transformers
 
 # Interface (Fase 5)
 streamlit==1.40.1            # cria a demo web clicável
