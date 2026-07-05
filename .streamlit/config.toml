@@ -1,0 +1,8 @@
+# Tema escuro — paleta índigo -> teal (alinhada ao portfólio)
+[theme]
+base = "dark"
+primaryColor = "#8B84FF"              # índigo claro: botões, foco, destaques
+backgroundColor = "#383838"           # fundo principal
+secondaryBackgroundColor = "#909193"  # cartões, barra lateral
+textColor = "#EDEFF7"                 # texto claro (bem legível)
+font = "sans serif"
