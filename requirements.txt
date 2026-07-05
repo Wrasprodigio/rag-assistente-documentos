@@ -1,0 +1,26 @@
+# ─── Dependências do Assistente RAG ───────────────────────────────
+# Versões fixadas para garantir reprodutibilidade (RNF-05 da spec).
+# Instale com:  pip install -r requirements.txt
+
+# Núcleo do RAG
+langchain==0.3.7              # orquestra o pipeline (loaders, chunking, chains)
+langchain-community==0.3.7    # integrações da comunidade (FAISS, loaders)
+langchain-openai==0.2.8       # conector para Azure OpenAI / OpenAI
+
+# Banco vetorial local (Fase 2) — grátis, roda na sua máquina
+faiss-cpu==1.9.0              # busca vetorial eficiente da Meta
+rank-bm25==0.2.2             # busca por palavra-chave (para a busca híbrida, Fase 3)
+
+# Leitura de documentos
+pypdf==5.1.0                 # extrai texto de PDFs
+wikipedia==1.4.0             # baixa artigos da Wikipedia (nossa base pública)
+
+# Embeddings locais (alternativa grátis ao Azure na fase de dev)
+sentence-transformers==3.3.1 # gera embeddings sem custo de API
+
+# Interface (Fase 5)
+streamlit==1.40.1            # cria a demo web clicável
+
+# Utilidades
+python-dotenv==1.0.1         # carrega variáveis do .env (chaves de API)
+tqdm==4.67.1                 # barra de progresso na indexação

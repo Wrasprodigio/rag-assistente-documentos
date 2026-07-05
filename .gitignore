@@ -1,0 +1,24 @@
+# ─── Segredos: NUNCA versionar (RNF-03) ───────────────────────────
+.env
+*.key
+
+# ─── Ambiente virtual Python ───────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# ─── Índice vetorial gerado (é grande e reproduzível) ─────────────
+index/
+*.faiss
+*.pkl
+
+# ─── Cache de modelos de embedding baixados ───────────────────────
+.cache/
+
+# ─── Arquivos de sistema ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Jupyter ──────────────────────────────────────────────────────
+.ipynb_checkpoints/
