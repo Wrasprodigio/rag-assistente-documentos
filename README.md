@@ -125,4 +125,4 @@ Este projeto usa exclusivamente **dados públicos** (artigos da Wikipedia sob li
 ---
 
 <!-- EDITE: seus links reais -->
-Desenvolvido por **Willyam Rodrigo** · [Portfólio](https://seu-usuario.github.io) · [LinkedIn](https://www.linkedin.com/in/willyam-rodrigo/)
+Desenvolvido por **Willyam Rodrigo** · [Portfólio](https://wrasprodigio.github.io/wportfolio/) · [LinkedIn](https://www.linkedin.com/in/willyam-rodrigo/)
